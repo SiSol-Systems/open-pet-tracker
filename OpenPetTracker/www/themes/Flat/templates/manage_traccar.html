@@ -1,0 +1,26 @@
+<div class="page solid white padding">
+	<h2>{{t 'Manage Traccar Server'}}</h2>
+	<form method="POST" action="ManageTraccarServer">
+		{{#each form.fieldlist}}
+			<div class="form-field {{ form_field.field_class }}">
+
+				{{#if is_hidden}}
+					{{{ field }}}
+				{{ else }}
+					{{#ifequal form_field.field_class 'BooleanField'  }}
+						{{{ field }}}
+						<label for="id_{{ name }}">{{ label }}</label>
+					{{ else }}
+						<label>{{ label }}</label><br>
+						{{{ field }}}
+					{{/ifequal}}
+				{{/if}}
+			</div>
+		
+		{{/each}}
+
+		<p class="text-center">
+			<button type="submit">{{t 'save'}}</button>
+		</p>
+	</form>
+</div>

@@ -1,0 +1,72 @@
+<div class="datePicker">
+	{{#if date}}
+		<table>
+			<tr>
+				<td>
+					<div class="form-field">
+						<label>{{t 'year'}}</label>
+						<select name="year">
+							{{#each years}}
+								<option value="{{ year }}" {{#if selected}}selected{{/if}}>{{ year }}</option>
+							{{/each}}
+							<span class="bar"></span>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="form-field">
+						<label>{{t 'month'}}</label>
+						<select name="month">
+							{{#each months}}
+								<option value="{{ month }}" {{#if selected}}selected{{/if}}>{{ month }}</option>
+							{{/each}}
+						</select>
+						<span class="bar"></span>
+					</div>
+				</td>
+				<td>
+					<div class="form-field">
+						<label>{{t 'day'}}</label>
+						<select name="day">
+							{{#each days}}
+								<option value="{{ day }}" {{#if selected}}selected{{/if}}>{{ day }}</option>
+							{{/each}}
+						</select>
+						<span class="bar"></span>
+					</div>
+				</td>
+			</tr>
+		</table>
+	{{/if}}
+	{{#if time}}
+		<table>
+			<tr>
+				<td>
+					<div class="form-field">
+						<label>{{t 'hours'}}</label>
+						<select name="hours">
+							{{#each hours}}
+								<option value="{{ hours }}" {{#if selected}}selected{{/if}}>{{ hours }}</option>
+							{{/each}}
+							<span class="bar"></span>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="form-field">
+						<label>{{t 'minutes'}}</label>
+						<select name="minutes">
+							{{#each minutes}}
+								<option value="{{ minutes }}" {{#if selected}}selected{{/if}}>{{ minutes }}</option>
+							{{/each}}
+						</select>
+						<span class="bar"></span>
+					</div>
+				</td>
+			</tr>
+		</table>
+	{{/if}}
+</div>
+<div class="dialogbottom">
+	<button type="button" action="datePicker.close" class="btn flat tap preventDefault">{{t 'CANCEL'}}</button> <button type="button" action="datePicker.accept" class="btn flat tap preventDefault">{{t 'SET DATE'}}</button>
+</div>

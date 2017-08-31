@@ -1,0 +1,7 @@
+{
+	"header_templates" : {
+		"default" : "themes/Flat/templates/appbar_default.html"
+	},
+
+	"name" : "Flat"
+}

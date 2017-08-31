@@ -1,0 +1,288 @@
+@media only screen and (orientation: portrait) {
+	.logo {
+		height: 45vh;
+	}
+}
+
+@media only screen and (orientation: landscape) {
+	.logo {
+		height: 45vw;
+	}
+}
+
+
+html, body, #app, button {
+	font-size: 3vh;
+}
+
+h1 {
+	font-size: 4vh;
+}
+
+small {
+	font-size: 2px;
+}
+
+.fluidgrid.pad > [class*='col-'] {
+	padding: 15px;
+}
+
+.page.fluid {
+	padding: 45px;
+}
+
+.page.single {
+	height: 92vh;
+}
+
+.grid-pad > [class*='col-'] {
+  padding: 0px 30px 30px 0px;
+}
+
+.grid-pad > [class*='col-']:last-of-type {
+  padding: 0px 0px 30px 0px;
+}
+
+.padding {
+	padding: 60px;
+}
+
+.padbot, .detailtext {
+	padding-bottom: 60px;
+}
+
+.padding.half {
+	padding: 30px;
+}
+
+.logo {
+	margin-bottom: 60px;
+}
+
+.vappbar {
+	border-spacing: 2.5vh;
+}
+
+.appbar td {
+	height: 8vh;
+}
+
+.appbar td:first-child, .appbar td:last-child {
+	width: 12%;
+}
+
+.shadow1 {
+	-webkit-box-shadow: 0px 8px 9px 0px rgba(0,0,0,0.15);
+	box-shadow: 0px 8px 9px 0px rgba(0,0,0,0.15);
+}
+
+.shadow2 {
+	-webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.5);
+	box-shadow:         0px 0px 9px 3px rgba(0,0,0,0.5);
+}
+
+
+#appbar-content {
+	font-size: 3vh;
+}
+
+.appbar .menubars {
+	width: 3.5vh;
+	background-size: 3vh auto;
+}
+
+.appbar .btn {
+	padding: 0 30px 0 30px;
+	font-size: 40px;
+	height: 5vh;
+	line-height: 5vh;
+}
+
+.MobileNumberInput .btn {
+	padding: 0 45px 0 45px;
+	font-size: 80px;
+	height: 120px;
+	line-height: 100px;
+}
+
+.sidemenucontent {
+    width: 75vw;
+}
+
+.vappbar {
+	height: 8.5vh;
+}
+
+.form-field {
+	margin-bottom: 40px; 
+}
+
+.form-field input[type="text"], .form-field select, .form-field .managedInput, .form-field input[type="password"] {
+	padding: 20px 20px 20px 10px;
+	height: 7vh;
+}
+
+.form-field textarea {
+	padding: 20px 20px 20px 10px;
+	height: 21vh;
+}
+
+.form-field .bar:after {
+	height: 6px;
+	bottom: 1px;
+}
+
+.form-field input, .form-field select, .form-field .managedInput {
+	font-size: 4vh;
+}
+
+.form-field label {
+	font-size: 2vh;
+}
+
+
+.form-field.MultipleChoiceField input[type="checkbox"] ~ label, .form-field.BooleanField input[type="checkbox"] ~ label {
+	font-size: 4vh;
+}
+
+.form-field.MultipleChoiceField div {
+	margin-bottom: 40px;
+}
+
+.form-field .managedInput img {
+	margin-right: 20px;
+}
+
+button {
+	font-size: 3vh;
+	padding: 40px;
+}
+
+.form-field .errorbox {
+	font-size: 1.5vh;	
+}
+
+.shadow {
+	-webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+}
+
+#ModalDialogTitle {
+	font-size: 45px;
+	border-bottom: 3px solid rgba(85,153,255,1);
+}
+
+#ModalDialogContent {
+	font-size:2.5vh;
+}
+
+#ModalDialogContent .loader {
+	width: 100px;
+	height: auto;
+	padding: 50px;
+}
+
+.sidemenuhead {
+
+}
+
+.sidemenuhead > div {
+	padding: 40px;
+}
+
+
+.sidemenubody .menulink {
+	padding: 40px 40px 40px 40px;
+	font-size: 2.85vh;
+}
+
+.sidemenubody .menutrackers {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 40px;
+}
+
+.sidemenubody .menutrackers td {
+	font-size: 2.85vh;
+}
+
+.sidemenubody .menutitle {
+	padding: 40px 40px 0px 40px;
+	font-size: 2vh;
+	border-top: 3px solid #ddd;
+}
+
+.switch label {
+	height: 40px;
+	width: 100px;
+}
+
+.switch label:after {
+	width: 60px;
+	height: 60px;
+	-webkit-box-shadow: 0px 6px 6px rgba(0,0,0,0.05);
+	box-shadow: 0px 6px 6px rgba(0,0,0,0.05);
+}
+
+
+.btn {
+	font-size: 55px;
+	padding: 50px;
+}
+
+.btn-block {
+	margin-bottom: 60px !important;
+}
+
+.btn-xs {
+	font-size: 35px;
+	padding: 15px;
+}
+
+.choiceBox td {
+	padding: 30px;
+}
+
+.choiceBox .image {
+	height: 40vw;
+}
+
+#TrackingMap {
+	height: 92vh;
+}
+
+.home-submenu {
+	bottom: 165px;
+	padding: 60px 60px 0px 60px;
+}
+
+.positionInputIndicator {
+	width: 10vw;
+	margin-right: 20px;
+	height: 100%;
+}
+
+#positionPickerMap {
+	height: 60vh;
+}
+
+.range-output {
+	font-size: 70px;
+}
+
+.action-buttons img {
+	width: 15vw;
+	height: auto;
+}
+
+.mapmenu {
+	right: 30px;
+	width: 130px;
+}
+
+.mapmenu > button {
+	width: 130px;
+	height: 130px;
+	padding: 15px;
+	margin-bottom: 30px;
+}

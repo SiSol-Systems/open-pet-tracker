@@ -1,0 +1,24 @@
+<div class="menulist">
+	<div class="menutitle">{{t 'Trackers'}}</div>
+	<div class="menucatcontent">
+		<table class="menutrackers">
+			{{#each trackers}}
+				<tr>
+					<td class="tap" action="ManageTracker" kwargs='{"tracker_id":{{ id }} }'>
+						{{ dog_name }}
+					</td>
+					<td>
+						<span class="switch">
+							<input type="checkbox" id="trackerswitch-{{id}}" class="onchange" action="activate_tracker" kwargs='{"tracker_id":{{ id }} }' {{#if is_active}}checked{{/if}} />
+							<label for="trackerswitch-{{ id }}"></label>
+						</span>
+					</td>
+				</tr>
+			{{/each}}
+		</table>
+	</div>
+	
+	<div class="menutitle">App</div>
+	<div class="tap menulink" action="GeolocationReport">{{t 'Geolocation'}}</div>
+	<div class="tap menulink" action="About">{{t 'About'}}</div>
+</div>

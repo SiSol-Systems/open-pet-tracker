@@ -1,0 +1,923 @@
+/*
+* z-indexes:
+* appbar: 80
+* sidemenu : 90
+* Modals: 100
+*/
+
+* {
+	font-family: Roboto, serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* LOADER */
+.text-loader{
+	text-align:center;
+	width: 100%;
+	background: rgba(255,255,255,0.7);
+	padding: 1rem;
+}
+
+.text-loader, .loader {
+	color: #138efc;
+	margin: 0 auto;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+	border-radius: 50%;
+	width: 1.2rem;
+	height: 1.2rem;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation: load7 1.8s infinite ease-in-out;
+	animation: load7 1.8s infinite ease-in-out;
+}
+.loader {
+	position: relative;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+	content: '';
+	position: absolute;
+	top: 0;
+}
+.loader:before {
+	left: -1.75rem;
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+}
+.loader:after {
+	left: 1.75rem;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 1.25rem 0 -0.65rem;
+  }
+  40% {
+    box-shadow: 0 1.25rem 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 1.25rem 0 -0.65rem;
+  }
+  40% {
+    box-shadow: 0 1.25rem 0 0;
+  }
+}
+
+
+/* GRID SYSTEM */
+
+[class*='col-'] {
+	float: left;
+}
+
+.col-2-3 {
+  width: 66.66%;
+}
+.col-1-3 {
+  width: 33.33%;
+}
+
+.col-1-2 {
+	width: 50%;
+}
+
+.grid, .fluidgrid {
+	width: 100%;
+}
+
+.grid:after, .fluidgrid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+	display: inline-block;
+}
+
+a, a:visited, a:hover {
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+html, body, #app {
+	font-family: Roboto, serif;
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    width:100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+html {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: fixed;
+	background-attachment: fixed;
+}
+
+h1, h2, h3, h4 {
+	margin:0;
+	padding:0;
+}
+
+
+#appbar-container {
+	position: fixed;
+	z-index: 80;
+	left:0; right:0; top:0;
+	font-family: Roboto;
+	width: 100%;
+	background-color : rgba(85,153,255,1);
+	color: rgba(255,255,255,1);
+}
+
+.appbar {
+	width:100%;
+	border-collapse: separate;
+}
+
+.appbar td {
+	vertical-align: middle;
+}
+
+.appbar .menubars {
+	background-image : url(../../img/material/menubars.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#appbar-content {
+	font-weight: bold;
+	text-align:center;
+}
+
+#sidemenu {
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: -100%;
+	z-index: 90;
+	border: none;
+	padding:0;
+	margin:0;
+	border-collapse: collapse;
+	-webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+#sidemenu > div {
+	position:relative;
+	width: 100%;
+	height: 100%;
+}
+
+.sidemenucontent {
+	background: #FFFFFF;
+	height: 100%;
+	position: absolute;
+	right:0; top:0;
+	z-index: 92;
+}
+
+.sidemenuoverlay {
+	position: absolute;
+	left:0;right:0;top:0;bottom:0;
+	width: 100%;
+	height: 100%;
+	z-index: 91;
+	background: #FFF;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+
+.showmenu {
+	-webkit-transform: translate3d(-100%,0px,0px);
+    transform : tanslate3d(-100%,0px,0px);
+}
+
+.sidemenutrackers {
+	width: 100%;
+}
+
+.sidemenutrackers td {
+	vertical-align:middle;s
+}
+
+.sidemenuhead {
+	width: 100%;
+	background: rgba(140,140,140,1);
+	color: #FFF;
+	display: table;
+}
+
+.sidemenuhead > div {
+	display: table-cell;
+	vertical-align:middle;
+}
+
+.sidemenubody .menulist {
+	width: 100%;
+}
+
+.sidemenubody .menulist > div {
+	width: 100%;
+}
+
+.sidemenubody .menutitle {
+	color: rgba(140,140,140,1);
+}
+
+
+.sidemenubody .menulink {
+	color: rgba(50,50,50,1);
+}
+
+.page {
+	width: 100%;
+	-webkit-opacity: 0.2;
+	opacity: 0.2;
+	-webkit-transition: .3s ease;
+	transition: .3s ease;
+	-webkit-transform: scale3d(0.9,0.9,1);
+	transform: scale3d(0.9,0.9,1);
+}
+
+.page.faded-in {
+	opacity: 1;
+	-webkit-transform :scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+.solid {
+	background: rgba(255,255,255,0.85);
+}
+
+.solid.white {
+	background: rgba(255,255,255,1);
+}
+
+.translucent.white {
+	background: rgba(255,255,255,0.7);
+}
+
+.translucent.dark {
+	background: rgba(0,0,0,0.55);
+}
+
+.translucent.dark, .translucent.dark label {
+	color: #FFF;
+}
+
+button {
+	border: none;
+	outline: none;
+}
+
+button[type="submit"]{
+	background: #64C847;
+	color: #fff;
+}
+
+button.danger, .button.danger {
+	background : #F65058;
+	color: #fff;
+}
+
+.text-center {
+	text-align: center;
+}
+
+#ModalDialog {
+	position: fixed;
+	table-layout:fixed;
+	left:0;top:0;right:0;bottom:0;
+	width: 100%;
+	height: 100%;
+	z-index:300;
+	margin:0;
+	padding:0;
+	border-collapse: collapse;
+	opacity : 1;
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+
+#ModalDialog .modalback {
+	background: rgba(0,0,0,0.6);
+	width: 100%;
+	height: 120%; /* 120 instead of 100: fix hidden phone header bug in chrome */
+	position: absolute;
+	left:0;
+	top:0;
+}
+
+#ModalDialog.closed {
+	opacity: 0;
+}
+
+#ModalDialog.inback {
+	z-index: -10;
+}
+
+#ModalDialog.closed .dialogbox {
+	-webkit-transform: scale3d(0,0,0);
+	-webkit-transform-origin: center center;
+	transform: scale3d(0,0,0);
+	transform-origin: center center;
+	opacity: 0;
+}
+
+#ModalDialog td {
+	position: relative;
+	vertical-align:middle;
+	text-align:center;
+}
+
+#ModalDialog .dialogbox {
+	background: #FFF;
+	min-height: 25%;
+	margin: 0 auto;
+	-webkit-border-radius: 0.1em;
+	border-radius : 0.1em;
+	text-align: left;
+	position: relative;
+	-webkit-transition: all .15s ease;
+	transition: all .15s ease;
+	opacity: 1;
+}
+
+.dialogbottom {
+	text-align: right;
+}
+
+/* FORMS */
+.form-field {
+	width: 100%; 
+	position:relative; 
+}
+
+.form-field input[type="text"], .form-field input[type="number"], .form-field select, .form-field .managedInput, .form-field input[type="password"], .form-field textarea {
+	width: 100%;
+	outline: none;              
+	display: block;
+	border:none;
+	border-bottom:1px solid #757575;
+	background: #FFF;
+	color: #000;
+}
+
+.form-field input:focus, .form-field select:focus, .form-field input[type="number"] {
+	outline:none;
+}
+
+.form-field input[type="checkbox"] {
+	vertical-align: middle;
+}
+
+.form-field select {
+	appearance: none;
+	-webkit-appearance: none;
+	background: #FFF;
+	background-image: url("../../img/material/downarrow.svg");
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+	background-position: right center;
+}
+
+.form-field .managedInput img {
+	height: 95%;
+	width: auto;
+	vertical-align: middle;
+}
+
+/* LABEL ======================================= */
+.form-field label {
+	/*color:#999; 
+	font-weight:normal;
+	pointer-events:none;
+	-webkit-transition:0.2s ease all;
+	transition:0.2s ease all; */
+	vertical-align: middle;
+}
+
+/* active state */
+/*
+.form-field input:focus ~ label {
+  color:#5264AE;
+}*/
+
+/* BOTTOM BARS ================================= */
+.form-field .bar {
+	position:relative;
+	display:block;
+	width: 100%;
+}
+
+.form-field .bar:after     {
+	content:'';
+	width: 100%;
+	position: absolute;
+	background: rgba(85,153,255,0.8);
+	-webkit-transform: scale(0,0);
+	transform: scale(0,0);
+	-webkit-transition: 0.2s ease all;
+	transition: 0.2s ease all;
+}
+
+.form-field .bar.error:after {
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+	background: rgba(213,0,0,1);
+}
+
+.form-field label.error, .errorbox.error {
+	color: rgba(213,0,0,1);
+}
+
+/* active state */
+.form-field input:focus ~ .bar:after {
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+}
+
+/* valid state */
+.form-field .bar.valid:after {
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+	background: rgba(100,200,71,1);
+}
+
+
+/* switch ======================= */
+.switch label {
+	position: relative;
+	display: block;
+	background: #898989;
+	cursor: pointer;
+	border-radius: 1em;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+
+.switch label:after {
+	position: absolute;
+	display: block;
+	background: #fff;
+	content: '';
+	border-radius: 2em;
+	-webkit-transform: translate3d(-30%,-15%,0);
+	transform: translate3d(-30%,-15%,0);
+	-webkit-transition : -webkit-transform 0.3s ease;
+	transition: transform 0.3s ease;
+}
+
+
+.switch label:active:after {
+	/*-webkit-transform: scale(1.15, 0.85);
+	transform: scale(1.15, 0.85);*/
+}
+
+.switch input[type='checkbox'] {
+	display: none;
+	-webkit-transform: scale(6,3);
+	transform: scale(6,3);
+}
+
+.switch input[type='checkbox']:checked ~ label {
+	background: #5599ff;
+}
+
+.switch input[type='checkbox']:checked ~ label:after {
+	background: #3774d0;;
+}
+
+
+.switch input[type='checkbox']:checked ~ label:after {
+	-webkit-transform: translate3d(110%,-15%,0);
+	transform: translate3d(110%,-15%,0)
+}
+
+.switch input[type='checkbox']:disabled ~ label {
+	background: #d5d5d5;
+	pointer-events: none;
+}
+
+.switch input[type='checkbox']:disabled ~ label:after {
+	background: #bcbdbc;
+}
+
+/* LC custom inputs ============================== */
+.MobileNumberInput {
+	width: 100%;
+}
+
+.MobileNumberInput input {
+	text-align:center;
+}
+
+.MobileNumberInput td:first-child, .MobileNumberInput td:last-child {
+	width: 30%;
+}
+
+.MobileNumberInput td:first-child {
+	text-align: right;
+	padding-right: 0.3rem;
+}
+
+.MobileNumberInput td:last-child {
+	text-align: left;
+	padding-left: 0.3rem;
+}
+
+
+.MobileNumberInput .btn {
+	font-weight: bold;
+}
+
+.btn {
+	text-align: center;
+	background: none;
+	-webkit-border-radius: none;
+	border-radius: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #FFF;
+}
+
+.btn.btn-system, .choiceBox {
+	background: rgba(255,255,255,0.85);
+	color: rgba(100,100,100,1);
+}
+
+.btn, .choiceBox, .home-submenu, .trait-property, .form-field input[type="text"], .form-field input[type="number"], .form-field select, .form-field .managedInput, .form-field input[type="password"], .form-field textarea, .text-loader  {
+	-webkit-border-radius: 0.15rem;
+	border-radius: 0.15rem;
+}
+
+.btn.btn-primary {
+	background-color: rgba(0,136,204,1);
+}
+
+.btn.btn-success {
+	background-color: rgba(81,163,81, 1);
+}
+
+.btn.btn-secondary {
+	background-color: rgba(200,200,200, 1);
+}
+
+.appbar .btn {
+	display: inline-block;
+}
+
+.btn.flat {
+	background: none;
+	-webkit-border-radius: none;
+	border-radius: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: rgba(85,153,255,1);
+}
+
+#identification-matrix {
+	position: fixed;
+	z-index: 75;
+	overflow-y: auto;
+	-webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+	background: rgba(255,255,255,1);
+	color: rgba(100,100,100,1);
+}
+
+.matrix-hidden {
+	-webkit-transform: translate3d(0px,-115%,0px);
+    transform : tanslate3d(0px,-115%,0px);
+}
+
+.danger {
+	background-color: #ff4444;
+}
+
+.warning {
+	background-color: #ffbb33;
+}
+
+.success {
+	background-color: #00C851;
+}
+
+.info {
+	background-color: #33b5e5;
+}
+
+.logo {
+	display: table;
+	text-align: center;
+	width: 100%;
+}
+
+.logo > div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+@media only screen and (orientation: landscape) {
+	.logo img {
+		height: 80%;
+		width: auto;
+	}
+}
+
+@media only screen and (orientation: portrait) {
+	.logo img {
+		height: auto;
+		width: 80%;
+	}
+}
+
+.btn.btn-block {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.choiceBox {
+	width: 100%;
+	margin:0;
+	padding:0;
+	border-collapse: collapse;
+	border: none;
+	border-spacing: 0;
+}
+
+.choiceBox td {
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+	padding: 0;
+}
+
+.choiceBox .title {
+	font-weight: bold;
+}
+
+.choiceBox .image {
+	background-size: cover;
+	background-position: center center;
+}
+
+.detailimages {
+	width: 100%;
+}
+
+.map {
+	width: 100%;
+	height: 12rem;
+}
+
+.homenu-category {
+	position: relative;
+}
+
+.home-submenu {
+	position: absolute;
+	left:0; right:0;
+	z-index: 90;
+	width:100%;
+	background: rgba(0,0,0,0.4);
+	-webkit-transition: all .15s ease;
+	transition: all .15s ease;
+	opacity: 1;
+}
+
+.home-submenu .btn {
+	background: rgba(255,255,255,1);
+}
+
+.submenu-hidden {
+	-webkit-transform: scale3d(0,0,1);
+	transform: scale3d(0,0,1);
+	-webkit-transform-origin: bottom center;
+	transform-origin: bottom  center;
+	opacity: 0;
+}
+
+.multibtn {
+	position: relative;
+}
+
+.multibtn > div {
+	position: absolute;
+	top:0; left:0; right:0;
+	width: 100%;
+	height: 15%;
+	text-align: center;
+}
+
+.multibtn > div > img {
+	height:100%;
+	width: auto;
+	-webkit-transition: -webkit-transform .5s ease;
+	transition: transform .5s ease;
+	opacity: 0.3;
+}
+
+.multibtn.active img {
+	-webkit-transform: scaled3d(1,-1,1);
+	transform: scale3d(1,-1,1);
+	opacity: 1;
+}
+
+
+.datePicker {
+	width: 100%;
+	text-align: left;
+}
+
+.datePicker table {
+	border: none;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.positionInputIndicator {
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url(../../img/mapmarker_green.svg);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.positionInputIndicator.noposition {
+	background-image: url(../../img/mapmarker_red.svg);
+}
+
+.verboseposition.searchactive {
+	color: rgba(170,170,170,1);
+}
+
+.positionPicker, #positionPickerMap {
+	width: 100%;
+}
+
+.tap:hover {
+	cursor: pointer;
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+
+.TaxonInput {
+	width: 100%;
+	position: relative;
+}
+
+.taxonsearch-results {
+	position: absolute;
+	top: 0; left:0;right:0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background: #fefefe;
+	z-index: 79;
+	-webkit-border-radius: 0.2em;
+	border-radius: .2em;
+}
+
+.error {
+	color: rgba(213,0,0,1);
+}
+
+.descriptive-element {
+	border-bottom: 1px solid rgba(100,100,100,1);
+}
+
+.range-output {
+	text-align:center;
+	font-weight: bold;
+}
+
+.trait-property {
+	background: rgba(255,255,255,0.9);
+}
+
+.clearable-range {
+	width: 100%;
+}
+
+.clearable-range td:first-child {
+	width:80%;
+}
+
+.clearable-range td:last-child {
+	text-align:center;
+	vertical-align: middle;
+}
+
+input[type="range"] {
+	width: 100%;
+}
+
+.action-buttons {
+	width: 100%;
+	text-align: center;
+}
+
+.alert {
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.mapmenu {
+	position: fixed;
+	top: 40%;
+	z-index: 150;
+}
+
+.mapmenu > button {
+	display: block;
+	text-align: center;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+	border: none;
+	background: rgba(255,255,255,0.85);
+	border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	margin: 0;
+}
+
+.mapmenu > button {
+	background-size: 60%;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.mapmenu > button.history {
+	background-image: url('../../img/history.svg.png');
+}
+
+.mapmenu > button.centermap {
+	background-image: url('../../img/centermap.svg.png');
+}
+
+#history_minutes {
+	width: 100%;
+	text-align:center;
+	color:#FFF;
+	font-size: 1em;
+}	

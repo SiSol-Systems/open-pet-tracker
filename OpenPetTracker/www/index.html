@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+		<meta charset="utf-8"/>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://www.sisol-systems.com:* 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="css/boot.css">        
+		
+		<link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
+        <title>Open Pet Tracker</title>
+    </head>
+    <body>
+        <div id="app" class="mobile">
+			<div class="loader"></div>
+        </div>
+
+        <script type="text/javascript" src="js/index.js"></script>
+		
+		<script type="text/javascript" src="settings.js"></script>
+		<script type="text/javascript" src="js/History.js"></script>
+		<script type="text/javascript" src="js/hardwareBackbuttonListener.js"></script>
+
+		<script type="text/javascript" src="js/ajax.js"></script>
+		<script type="text/javascript" src="js/anyscreen.js"></script>
+		<script type="text/javascript" src="js/upstart.js"></script>
+
+		<script type="text/javascript" src="leaflet/leaflet-src.js"></script>
+
+		<script type="text/javascript" src="js/ModalDialog.js"></script>
+		<script type="text/javascript" src="js/Appbar.js"></script>
+		<script type="text/javascript" src="js/menu.js"></script>
+
+		<script type="text/javascript" src="js/mango/thirdparty/handlebars-v4.0.10.js"></script>
+		<script type="text/javascript" src="js/mango/thirdparty/i18next.min.js"></script>
+		<script type="text/javascript" src="js/mango/thirdparty/hammer.min.js"></script>
+		<script type="text/javascript" src="js/mango/thirdparty/hammer-time.min.js"></script>
+		<script type="text/javascript" src="js/mango/thirdparty/formdata.js"></script>
+		
+		<script type="text/javascript" src="js/mango/mango.js"></script>
+
+		<script type="text/javascript" src="js/mango/db/models.js"></script>
+		<script type="text/javascript" src="js/mango/db/RemoteDB.js"></script>
+		<script type="text/javascript" src="js/mango/db/SQLite.js"></script>
+
+		<script type="text/javascript" src="js/mango/forms/forms.js"></script>
+		<script type="text/javascript" src="js/mango/forms/widgets.js"></script>
+		<script type="text/javascript" src="js/mango/forms/fields.js"></script>
+		<script type="text/javascript" src="js/mango/forms/boundfield.js"></script>
+
+		<script type="text/javascript" src="js/mango/views/views.js"></script>
+		<script type="text/javascript" src="js/mango/views/generic.js"></script>	
+		<script type="text/javascript" src="js/mango/mango_handlebars_helpers.js"></script>
+
+		<script type="text/javascript" src="js/mobile-detect.js"></script>
+
+		<script type="text/javascript" src="models.js"></script>
+		<script type="text/javascript" src="forms.js"></script>
+		<script type="text/javascript" src="views.js"></script>
+
+		<script type="text/javascript" src="js/Geolocation.js"></script>
+
+		<script type="text/javascript" src="js/Tracking.js"></script>
+		<script type="text/javascript" src="js/traccar/portmap.js"></script>
+		<script type="text/javascript" src="js/traccar/TraccarInterface.js"></script>
+
+		<script type="text/javascript" src="js/tracker/SMSInterface.js"></script>
+
+		<script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
